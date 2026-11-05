@@ -19,7 +19,7 @@ bedrock:
 
   # The port that Geyser will listen on for incoming Bedrock connections.
   # Built-in signaling uses this port over TCP, and RakNet uses it over UDP.
-  port: 25602
+  port: 25602 # Port ini sudah tidak berfungsi, karena berbeda protokol, sehingga menggunakan port 19132 / 443
 
   # The UDP port that NetherNet connections use. 0 means the same port as above.
   # If raknet and nethernet transport mode are used in parallel, then this port has to be different to the port above.
@@ -29,7 +29,7 @@ bedrock:
   # "nethernet" uses NetherNet (with signaling), which is the new connection method for Bedrock Edition.
   # "both" accepts both NetherNet and RakNet. They each need their own UDP port: see "webrtc-port".
   # "raknet" only accepts RakNet, the now deprecated connection method which will be removed in the future.
-  transport: both
+  transport: raknet
 
   # Some hosting services change your Java port everytime you start the server and require the same port to be used for Bedrock.
   # This option makes the Bedrock port the same as the Java port every time you start the server.
@@ -44,7 +44,7 @@ bedrock:
     # "nxs": Geyser registers with the external signaling service configured below.
     # "hybrid": uses both "builtin" and "nxs".
     # "none" turns signaling off.
-    mode: builtin
+    mode: nxs
 
     # The addresses sent to connecting players for the NetherNet WebRTC connection, by both built-in and external signaling,
     # e.g. play.example.com, 198.51.100.1 or [2001:db8::1]:19133. If no port is given, the NetherNet UDP port is used.
